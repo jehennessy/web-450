@@ -15,6 +15,7 @@ import { AppRoutes } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { BaseLayoutComponent } from './shared';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,8 @@ import { BaseLayoutComponent } from './shared';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClient,
+    HttpClientModule,
     RouterModule.forRoot(AppRoutes, { useHash: true, enableTracing: false }),
   ],
   providers: [],
