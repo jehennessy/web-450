@@ -12,9 +12,10 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule} from '@angular/router';
 import { AppRoutes } from './app.routing';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { BaseLayoutComponent } from './shared';
+import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -22,7 +23,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { CumulativeSummaryComponent } from './pages/cumulative-summary/cumulative-summary.component';
 
-import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule, MatFormFieldModule, MatInputModule, MatCardModule, MatCard } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
@@ -42,7 +43,6 @@ import { CookieService } from 'ngx-cookie-service';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClient,
     HttpClientModule,
     RouterModule.forRoot(AppRoutes, { useHash: true, enableTracing: false }),
     MatButtonModule,
@@ -52,7 +52,9 @@ import { CookieService } from 'ngx-cookie-service';
     FlexLayoutModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule,
+    FormsModule
   ],
   providers: [{
     provide: LocationStrategy, useClass: HashLocationStrategy},

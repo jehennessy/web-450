@@ -1,15 +1,21 @@
-<div class="wrapper">
-  <div class="frm-login">
-    <mat-card>
-      <mat-card-title>Employee Login</mat-card-title>
-      <mat-card-subtitle>Please enter your employee ID to enter NodeQuiz.</mat-card-subtitle>
+<div fxLayout="column">
+    <mat-card fxFlex>
+      <mat-card-header>
+        <mat-card-title>Employee Login</mat-card-title>
+        <mat-card-subtitle>Please enter your employee ID to enter NodeQuiz.</mat-card-subtitle>
+      </mat-card-header>
+
 
       <mat-card-content>
-        <p *ngIf="errorMessage" class="form-error">{{ errorMessage }}</p>
+        <small *ngIf="form.controls['employeeId'].hasError('required') && form.controls['employeeId'].touched" class="form-error">Employee ID is required!</small>
+        <small *ngIf="form.controls['employeeId'].hasError('pattern') && form.controls['employeeId'].touched" class="form-error">Employee ID must be an integer value!</small>
+        <small *ngIf="errorMessage">{{errorMessage}}</small>
+
+        <br />
 
         <form [formGroup]="form" (ngSubmit)="login()">
           <mat-form-field>
-            <input type="text" matInput [formControl]="form.controls['employeeId'" placeholder="Enter your employee ID">
+            <input type="text" matInput [formControl]="form.controls['employeeId']" placeholder="Enter your employee ID">
           </mat-form-field>
           <mat-card-actions>
             <button type="submit">Login</button>
@@ -18,5 +24,4 @@
 
       </mat-card-content>
     </mat-card>
-  </div>
 </div>

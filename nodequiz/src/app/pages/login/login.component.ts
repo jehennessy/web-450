@@ -25,13 +25,13 @@ export class LoginComponent implements OnInit {
   login() {
     const employeeId = this.form.controls['employeeId'].value;
 
-    this.http.get('/api/employees/' + employeeId.subscribe(res => {
+    this.http.get('/api/employees/' + employeeId).subscribe(res => {
       if (res) {
         this.cookieService.set('isAuthenticated', 'true', 1);
         this.router.navigate(['/dashboard']);
       } else {
         this.errorMessage = "The employee ID you entered was invalid!"
       }
-    }))
+    })
   }
 }
