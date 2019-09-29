@@ -11,10 +11,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let userSchema = new Schema({
+let employeeSchema = new Schema({
   employeeId: { type: String, required: true },
-  firstName: { type: String },
-  lastName: { type: String }
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Employee', employeeSchema);
