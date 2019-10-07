@@ -30,6 +30,10 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { AuthGuard } from './shared/auth.guard';
 import { CookieService } from 'ngx-cookie-service';
 
+import { QuizComponent } from './pages/quiz/quiz.component';
+import { CarouselModule } from 'primeng/carousel';
+import { PresentationComponent } from './pages/presentation/presentation.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +42,9 @@ import { CookieService } from 'ngx-cookie-service';
     LoginComponent,
     DashboardComponent,
     NotFoundComponent,
-    CumulativeSummaryComponent
+    CumulativeSummaryComponent,
+    QuizComponent,
+    PresentationComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +60,8 @@ import { CookieService } from 'ngx-cookie-service';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    CarouselModule
   ],
   providers: [{
     provide: LocationStrategy, useClass: HashLocationStrategy},

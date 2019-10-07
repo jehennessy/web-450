@@ -1,1 +1,57 @@
-<p>dashboard works!</p>
+<div>
+  <h1>Select a Quiz</h1>
+</div>
+
+<div fxLayout>
+  <div *ngFor="let quiz of quizzes">
+    <mat-card fxFlex="25%">
+      <mat-card-header>
+        <mat-card-title>{{quiz.name}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="../../../assets/images/{{quiz.image}}" alt="Laptop and HTML & CSS book">
+      <mat-card-actions>
+        <button mat-flat-button color="accent" routerLink="html-basics">View Presentation</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <mat-card fxFlex="25%">
+      <mat-card-header>
+        <mat-card-title>HTML Basics</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="../../../assets/images/html-image.jpg" alt="Laptop and HTML & CSS book">
+      <mat-card-actions>
+        <button mat-flat-button color="accent" routerLink="html-basics">View Presentation</button>
+      </mat-card-actions>
+    </mat-card>
+
+  <mat-card fxFlex="25%">
+    <mat-card-header>
+      <mat-card-title>HTML Basics</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="../../../assets/images/html-image.jpg" alt="Laptop and HTML & CSS book">
+    <mat-card-actions>
+      <button mat-flat-button color="accent" routerLink="html-basics">View Presentation</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card fxFlex="25%">
+    <mat-card-header>
+      <mat-card-title>CSS Basics</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="../../../assets/images/css-image.jpg" alt="Css code on laptop">
+    <mat-card-actions>
+      <button mat-flat-button color="accent" routerLink="css-basics">View Presentation</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card fxFlex="25%">
+    <mat-card-header>
+      <mat-card-title>JavaScript Basics</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="../../../assets/images/javascript-image.jpg" alt="Man on laptop in cafe">
+    <mat-card-actions>
+      <button mat-flat-button color="accent" routerLink="javascript-basics">View Presentation</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

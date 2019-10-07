@@ -16,6 +16,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { AuthGuard } from './shared/auth.guard';
 import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
 import { NgModule } from '@angular/core';
+import { QuizComponent } from './pages/quiz/quiz.component';
+import { PresentationComponent } from './pages/presentation/presentation.component';
 
 
 export const AppRoutes: Routes = [
@@ -31,6 +33,17 @@ export const AppRoutes: Routes = [
       {
         path: 'cumulative-summary',
         component: CumulativeSummaryComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'presentation:id',
+        component: PresentationComponent,
+        canActivate: [AuthGuard]
+      },
+
+      {
+        path: 'quiz:id',
+        component: QuizComponent,
         canActivate: [AuthGuard]
       }
     ]
