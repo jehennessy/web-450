@@ -14,6 +14,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose');
 const Employee = require('./models/employee');
+const Quiz = require('./models/quiz');
 
 let app = express();
 
@@ -57,6 +58,19 @@ app.get('/api/employees/:id', function(req, res, next) {
     } else {
       console.log(employee);
       res.json(employee);
+    }
+  })
+});
+
+// Get Quiz by ID
+app.get('/api/quiz/:id', function(req, res, next) {
+  Quiz.findOne({'quizId': req.params.id}, function(err, quiz) {
+    if (err) {
+      console.log(err);
+      return next(err);
+    } else {
+      console.log(quiz);
+      res.json(quiz);
     }
   })
 });

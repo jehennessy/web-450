@@ -23,7 +23,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { CumulativeSummaryComponent } from './pages/cumulative-summary/cumulative-summary.component';
 
-import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule, MatFormFieldModule, MatInputModule, MatCardModule, MatCard } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule, MatFormFieldModule, MatInputModule, MatCardModule, MatCard, MatListModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
@@ -61,7 +61,8 @@ import { PresentationComponent } from './pages/presentation/presentation.compone
     MatInputModule,
     MatCardModule,
     FormsModule,
-    CarouselModule
+    CarouselModule,
+    MatListModule
   ],
   providers: [{
     provide: LocationStrategy, useClass: HashLocationStrategy},

@@ -1,3 +1,12 @@
+/*
+============================================
+; Title:  cumulative-summary.component.ts
+; Author: Professor Krasso
+; Date:   10 October 2019
+; Modified By: Jordan Hennessy
+; Description: NodeQuiz Application
+;===========================================
+*/
 import { Component, OnInit } from '@angular/core';
 
 @Component({

@@ -1,1 +1,38 @@
-<p>quiz works!</p>
+<mat-card>
+  <mat-card-content *ngIf="quiz.question">
+
+    <form #quizForm="ngForm" (ngSubmit)="onSubmit(quizForm.value); quizForm.reset();">
+      <div *ngFor="let question of quiz.question">
+        <div>
+          <mat-card>
+            <mat-card-content>
+              <div fxLayout="column">
+                <mat-list>
+                  <div fxLayout="row">
+                    <h3>Question {{question.content}}</h3>
+                  </div>
+                </mat-list>
+                <br />
+
+                <div fxLayout="row" ngModelGroup="quiz">
+                  <label for="Answers:"></label>
+                  <div fxLayout="column">
+                    <div *ngFor="let answer of question.answer">
+                      <input [(ngModel)]="quiz[question.id]" [checked]="quiz[question.id]" value="{{answer.id}};{{answer.correct}}" name="quiz{{question.id}}" type="radio">
+                      {{answer.content}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+      <mat-card-actions>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+
+</mat-card>
+
+

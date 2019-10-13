@@ -2,24 +2,20 @@
     <mat-card class="mat-elevation-z8">
       <mat-card-header>
         <mat-card-title>
-          HTML Basics Slideshow
+          {{quizName}}
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p-carousel [value]="items" headerText="HTML Basics" numVisible="1">
+        <p-carousel [value]="slideImages" numVisible="1">
           <ng-template let-item pTemplate="item">
             <div>
-                <img src="../../../assets/Slides/HTML-slides/{{item.image}}">
-            </div>
-            <div>
-              <h3>{{item.name}}</h3>
+                <img src="../../../assets/slides/{{presentation}}{{item.image}}">
             </div>
           </ng-template>
         </p-carousel>
       </mat-card-content>
-
       <mat-card-actions>
-        <button mat-flat-button color="accent" routerLink="quiz">Take Quiz</button>
+        <button mat-flat-button color="accent" routerLink="dashboard/quiz/{{presentationId}}">Take Quiz</button>
       </mat-card-actions>
     </mat-card>
   </div>

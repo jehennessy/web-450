@@ -1,3 +1,12 @@
+/*
+============================================
+; Title:  login.component.ts
+; Author: Professor Krasso
+; Date:   10 October 2019
+; Modified By: Jordan Hennessy
+; Description: NodeQuiz Application
+;===========================================
+*/
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
